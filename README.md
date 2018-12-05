@@ -1,1 +1,3 @@
 # blog
+
+write in go
