@@ -1,0 +1,81 @@
+{{define "admin/sysconfig.html"}}
+{{template "admin/header.html"}}
+
+<div class="wrapper">
+{{template "admin/top.html"}}
+
+{{template "admin/menu.html"}}
+    <div class="content-wrapper">
+        <div class="content-header">
+            <ul class="breadcrumb">
+                <li><a href="#"><i class="icon icon-home"></i></a></li>
+                <li><a href="/admin">菜单</a></li>
+                <li class="active">系统设置</li>
+            </ul>
+        </div>
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">系统设置</div>
+                    </div>
+                    <div class="panel-body">
+                        <form method="post" action="/admin/sysconfig/save" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-1">网站名称</label>
+                                <div class="col-sm-10">
+                                <input type="text" name="site_name" value="{{.configInfo.SiteName}}" class="form-control" placeholder="请输入网站名称">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1">网站关键字</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" name="key_word" value="{{.configInfo.KeyWord}}" placeholder="请输入网站关键字">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1">网站Email</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" name="admin_email" value="{{.configInfo.AdminEmail}}" placeholder="请输入网站联系人email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1">网站描述</label>
+                                <div class="col-sm-10">
+                                <textarea class="form-control" name="site_desc" placeholder="请输入网站描述">{{.configInfo.SiteDesc}}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1">网站开关</label>
+                                <div class="radio-group">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="is_open" value="1" {{if eq .configInfo.IsOpen 1}}checked{{end}}> 开启
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="is_open" value="0" {{if eq .configInfo.IsOpen 0}}checked{{end}}> 关闭
+                                    </label>
+                                </div>
+                                <label class="col-sm-1"></label>
+                                <div class="help-block">关闭后前台将不能访问</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1">关站描述</label>
+                                <div class="col-sm-10">
+                                <textarea class="form-control" placeholder="请输入关站描述" name="close_desc">{{ .configInfo.CloseDesc }}</textarea>
+                                </div>
+
+                            </div>
+                            <label class="col-sm-1"></label>
+                            <div class="help-block">网站关闭时显示</div>
+                            <label class="col-sm-1"></label>
+                            <input type="hidden" name="id" value="{{ .configInfo.ID}}" />
+                            <button type="submit" class="btn btn-primary">提交</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{template "admin/footer.html"}}
+{{end}}

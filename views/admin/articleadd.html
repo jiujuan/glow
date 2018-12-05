@@ -1,0 +1,62 @@
+{{define "admin/articleadd.html"}}
+{{template "admin/header.html"}}
+
+<div class="wrapper">
+{{template "admin/top.html"}}
+
+{{template "admin/menu.html"}}
+    <div class="content-wrapper">
+        <div class="content-header">
+            <ul class="breadcrumb">
+                <li><a href="#"><i class="icon icon-home"></i></a></li>
+                <li><a href="/admin">菜单</a></li>
+                <li class="active">新增文章</li>
+            </ul>
+        </div>
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">新增文章</div>
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label>网站名称</label>
+                                <input type="text" class="form-control" placeholder="请输入网站名称">
+                            </div>
+                            <div class="form-group">
+                                <label>网站关键字</label>
+                                <input type="text" class="form-control" placeholder="请输入网站关键字">
+                            </div>
+                            <div class="form-group">
+                                <label>网站描述</label>
+                                <textarea class="form-control" placeholder="请输入网站描述"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>网站开关</label>
+                                <div class="radio-group">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="status" checked> 开启
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="status"> 关闭
+                                    </label>
+                                </div>
+                                <div class="help-block">关闭后前台将不能访问</div>
+                            </div>
+                            <div class="form-group">
+                                <label>关站描述</label>
+                                <textarea class="form-control" placeholder="请输入关站描述">网站升级中。。。</textarea>
+                                <div class="help-block">网站关闭时显示</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">提交</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{template "admin/footer.html"}}
+{{end}}

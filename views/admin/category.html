@@ -1,0 +1,93 @@
+{{define "admin/category.html"}}
+{{template "admin/header.html"}}
+
+<div class="wrapper">
+{{template "admin/top.html"}}
+
+{{template "admin/menu.html"}}
+    <div class="content-wrapper">
+        <div class="content-header">
+            <ul class="breadcrumb">
+                <li><a href="/admin"><i class="icon icon-home"></i></a></li>
+                <li><a href="/admin">仪表盘</a></li>
+                <li class="active">分类管理</li>
+            </ul>
+        </div>
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">分类列表</div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-tools" style="margin-bottom: 15px;">
+                            <div class="tools-group">
+                                <a href="/admin/category/add" class="btn btn-primary"><i class="icon icon-plus-sign"></i> 新增</a>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th width="50">ID</th>
+                                <th>分类名</th>
+                                <th>分类path</th>
+                                <th>分类说明</th>
+                                <th>创建时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{range .catList}}
+                            <tr>
+                                <td>{{.ID}}</td>
+                                <td>{{.CatName}}</td>
+                                <td>{{.CatKey}}</td>
+                                <td>{{.CatInfo}}</td>
+                                <td>{{dateFormat .CreateTime ""}}</td>
+                                <td>
+                                    <a href="/admin/category/edit/{{.ID}}" class="btn btn-xs btn-primary">编辑</a>
+                                    <a href="#" class="btn btn-xs btn-danger" data-position="fit" data-toggle="modal" data-url="/admin/category/delete/{{.ID}}" data-target="#delCatModal">删除</a>
+                                </td>
+                            </tr>
+                            {{end}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<!--modal-->
+    <div class="modal fade" id="delCatModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title">请确认</h4>
+                </div>
+                <div class="modal-body">
+                    确定要删除这条分类吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary confirm-del-ok" id="confirmDelBtn">确定删除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    $(function(){
+        $("#delCatModal").on('show.zui.modal', function (e) {
+            $(this).find('.confirm-del-ok').click(function () {
+                alert($(e.relatedTarget).data('url'))
+                $.post($(e.relatedTarget).data('url'),{},function(result){
+                    alert(result.code)
+                    window.location.href = window.location.href;
+                },'json');
+            })
+        })
+    })
+</script>
+{{template "admin/footer.html"}}
+{{end}}

@@ -1,0 +1,47 @@
+{{define "admin/categoryadd.html"}}
+{{template "admin/header.html"}}
+
+<div class="wrapper">
+{{template "admin/top.html"}}
+
+{{template "admin/menu.html"}}
+    <div class="content-wrapper">
+        <div class="content-header">
+            <ul class="breadcrumb">
+                <li><a href="#"><i class="icon icon-home"></i></a></li>
+                <li><a href="/admin">菜单</a></li>
+                <li class="active">分类管理</li>
+            </ul>
+        </div>
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">分类管理</div>
+                    </div>
+                    <div class="panel-body">
+                        <form action="/admin/category/save" method="post">
+                            <div class="form-group">
+                                <label>分类名</label>
+                                <input type="text" name="cat_name" value="{{.catInfo.CatName}}" class="form-control" placeholder="请输入分类名">
+                            </div>
+                            <div class="form-group">
+                                <label>分类path</label>
+                                <input type="text" name="cat_key" value="{{.catInfo.CatKey}}" class="form-control" placeholder="请输入分类path">
+                            </div>
+                            <div class="form-group">
+                                <label>分类说明</label>
+                                <textarea name="cat_info" class="form-control" placeholder="请输入分类说明">{{.catInfo.CatInfo}}</textarea>
+                            </div>
+                            <input type="hidden" name="id" value="{{.catInfo.ID}}">
+                            <button type="submit" class="btn btn-primary">提交</button>
+                            <button class="btn " type="button" href=":;" onclick="javascript:history.back();">返回</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{template "admin/footer.html"}}
+{{end}}
