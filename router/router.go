@@ -14,7 +14,6 @@ func Route(router *gin.Engine) {
     router.SetFuncMap(funcMap)
     router.Static("/static","./static")
     router.LoadHTMLGlob("views/**/*")
-
     adminRouter := router.Group("/admin")
     {
         adminRouter.GET("/", admin.Index)
