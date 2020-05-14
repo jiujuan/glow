@@ -5,7 +5,7 @@ import (
     "flag"
     "os"
     "github.com/BurntSushi/toml"
-    log "github.com/Sirupsen/logrus"
+    log "github.com/sirupsen/logrus"
     "github.com/gin-gonic/gin"
     "github.com/jiujuanfeng/yunheblog/db"
     "github.com/jiujuanfeng/yunheblog/config"
