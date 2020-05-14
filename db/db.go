@@ -5,7 +5,7 @@ import (
     _ "github.com/jinzhu/gorm/dialects/mysql"
     "fmt"
     "github.com/jiujuanfeng/yunheblog/config"
-    log "github.com/Sirupsen/logrus"
+    log "github.com/sirupsen/logrus"
     )
 
 var DB *gorm.DB
