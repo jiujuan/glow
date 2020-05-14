@@ -7,7 +7,7 @@ import (
     "time"
     "github.com/jiujuanfeng/yunheblog/model"
     "github.com/jiujuanfeng/yunheblog/db"
-    log "github.com/Sirupsen/logrus"
+    log "github.com/sirupsen/logrus"
 )
 
 const (
