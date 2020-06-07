@@ -5,8 +5,8 @@ import (
     "net/http"
     "strconv"
     "time"
-    "github.com/jiujuanfeng/yunheblog/model"
-    "github.com/jiujuanfeng/yunheblog/db"
+    "github.com/jiujuan/yunheblog/model"
+    "github.com/jiujuan/yunheblog/db"
     log "github.com/sirupsen/logrus"
 )
 
