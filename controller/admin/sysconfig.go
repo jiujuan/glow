@@ -3,8 +3,8 @@ package admin
 import (
 	log "github.com/sirupsen/logrus"
 	"github.com/gin-gonic/gin"
-	"github.com/jiujuanfeng/yunheblog/db"
-	"github.com/jiujuanfeng/yunheblog/model"
+	"github.com/jiujuan/yunheblog/db"
+	"github.com/jiujuan/yunheblog/model"
 	"net/http"
 	"strconv"
 	"time"
