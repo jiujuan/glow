@@ -2,8 +2,8 @@ package router
 
 import (
     "github.com/gin-gonic/gin"
-    "github.com/jiujuan/yunheblog/controller/admin"
-    "github.com/jiujuan/yunheblog/utils"
+    "github.com/jiujuan/glow/controller/admin"
+    "github.com/jiujuan/glow/utils"
     "html/template"
 )
 

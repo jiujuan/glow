@@ -3,7 +3,7 @@ host="127.0.0.1"
 port = 3306
 password = "root"
 username = "root"
-db = "yunhe_blog"
+db = "glow"
 protocol = "tcp"
 charset = "utf8"
 maxIdleConn = 5
@@ -14,6 +14,6 @@ port = 8080
 env = "test"
 
 [log]
-file = "/var/tmp/yunheblog.log"
+file = "/var/tmp/glowblog.log"
 formatter = "text"
 level = "debug"  #debug info warn error fatal panic

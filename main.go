@@ -7,9 +7,9 @@ import (
     "github.com/BurntSushi/toml"
     log "github.com/sirupsen/logrus"
     "github.com/gin-gonic/gin"
-    "github.com/jiujuan/yunheblog/db"
-    "github.com/jiujuan/yunheblog/config"
-    "github.com/jiujuan/yunheblog/router"
+    "github.com/jiujuan/glow/db"
+    "github.com/jiujuan/glow/config"
+    "github.com/jiujuan/glow/router"
 )
 
 func initLog() {
